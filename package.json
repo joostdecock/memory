@@ -1,0 +1,58 @@
+{
+  "name": "memory",
+  "version": "0.0.1",
+  "description": "Jean's website",
+  "author": "马静 (https://github.com/Jeanismj)",
+  "homepage": "https://github.com/Jeanismj/Memory",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Jeanismj/Memory.git"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Jeanismj/Memory/issues"
+  },
+  "scripts": {
+    "build": "next build",
+    "dev": "next dev -p 8000",
+    "develop": "next dev -p 8000",
+    "lint": "next lint",
+    "prebuild": "node ./prebuild/index.mjs",
+    "start": "next dev -p 8000"
+  },
+  "peerDependencies": {},
+  "dependencies": {
+    "@headlessui/react": "^1.7.13",
+    "@tailwindcss/typography": "0.5.9",
+    "daisyui": "2.51.5",
+    "i18next": "^22.4.14",
+    "lodash.get": "^4.4.2",
+    "lodash.orderby": "^4.6.0",
+    "lodash.set": "^4.3.2",
+    "lodash.unset": "^4.5.2",
+    "next": "13.2.4",
+    "next-i18next": "^13.2.2",
+    "postcss-for": "^2.1.1",
+    "react": "18.2.0",
+    "react-copy-to-clipboard": "5.1.0",
+    "react-dom": "18.2.0",
+    "react-hot-toast": "^2.4.0",
+    "react-hotkeys-hook": "^4.3.8",
+    "react-i18next": "^12.2.0",
+    "react-swipeable": "7.0.0",
+    "use-persisted-state": "^0.3.3"
+  },
+  "devDependencies": {
+    "autoprefixer": "10.4.14",
+    "eslint-config-next": "13.2.4",
+    "postcss": "8.4.21",
+    "recursive-readdir": "^2.2.3",
+    "tailwindcss": "3.3.1",
+    "yaml": "^2.2.1"
+  },
+  "engines": {
+    "node": ">=16.0.0",
+    "npm": ">=8"
+  },
+  "private": true
+}

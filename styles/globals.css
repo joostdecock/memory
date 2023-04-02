@@ -1,0 +1,135 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  /* Applied styles for common HTML tags */
+  h1 {
+    @apply text-base-content text-4xl py-5 font-bold lg:text-6xl font-black;
+  }
+  h2 {
+    @apply text-base-content text-3xl pt-4 pb-3 m-0 font-black lg:text-4xl border-b-2 border-base-200;
+  }
+  h3 {
+    @apply text-base-content text-2xl pt-3 pb-2 m-0 font-black lg:text-3xl;
+  }
+  h4 {
+    @apply text-base-content text-xl pt-2 pb-1 m-0 font-black lg:text-2xl;
+  }
+  h5 {
+    @apply text-base-content text-lg py-1 m-0 font-black lg:text-xl;
+  }
+  h6 {
+    @apply text-base-content text-base py-0 m-0 font-black lg:text-lg;
+  }
+  p {
+    @apply text-base-content my-1 py-2 text-base leading-6;
+  }
+  .btn {
+    @apply normal-case;
+  }
+
+  /* Dropdowns */
+  .navdrop {
+    max-height: 80vh;
+  }
+
+  /* Keep spacing after headings between p and non-p consistent */
+  h1 + p,
+  h2 + p,
+  h3 + p,
+  h4 + p,
+  h5 + p,
+  h6 + p {
+    padding-top: 0;
+    margin-top: 0;
+  }
+}
+
+/* Override DaisyUI button text color */
+.btn-info {
+  color: var(--btn-info-content);
+}
+.btn-success {
+  color: var(--btn-success-content);
+}
+.btn-warning {
+  color: var(--btn-warning-content);
+}
+.btn-error {
+  color: var(--btn-error-content);
+}
+
+/* Theme gradient */
+.theme-gradient {
+  background-image: var(--theme-gradient);
+}
+.theme-gradient.loading {
+  animation-name: MOVE-BG;
+  animation-duration: 4s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  margin-top: 0;
+  transition: margin-top 0.2s ease-out;
+}
+@keyframes MOVE-BG {
+  from {
+    background-position-x: 0;
+  }
+  to {
+    background-position-x: -200vw;
+  }
+}
+
+/* Lightbox */
+.lightbox img {
+  max-width: calc(100vw - 6rem);
+  max-height: calc(100vh - 6rem);
+}
+
+/* Style for navigation */
+details {
+  user-select: none;
+}
+details > summary > svg.details-toggle {
+  transform: rotate(90deg);
+  opacity: 0.4;
+}
+details[open] > summary > svg.details-toggle {
+  transform: rotate(-90deg);
+  opacity: 0.8;
+}
+details[open] summary ~ * {
+  animation: ease-opacity-t-b 0.5s ease;
+}
+summary {
+  cursor: pointer;
+}
+svg.details-toggle {
+  transition: all 0.2s ease-out;
+}
+
+/* TO JE TO - TO JE TAJ */
+summary::-webkit-details-marker {
+  display: none;
+}
+
+input[type='range']::-moz-range-track {
+  background: #3071a9;
+}
+
+input[type='range']::-ms-track {
+  background: transparent;
+}
+input[type='range']::-ms-fill-lower {
+  background: #2a6495;
+}
+input[type='range']:focus::-ms-fill-lower {
+  background: #3071a9;
+}
+input[type='range']::-ms-fill-upper {
+  background: #3071a9;
+}
+input[type='range']:focus::-ms-fill-upper {
+  background: #367ebd;
+}
