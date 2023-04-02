@@ -49,6 +49,7 @@ const HomePage = (props) => {
             <p className="text-center">
               <PageLink href="/typography" txt="Show styles" />
             </p>
+    <button onClick={() => app.setModal(<p>test</p>)}>test</button>
           </div>
         </div>
       </section>

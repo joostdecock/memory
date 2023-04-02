@@ -51,22 +51,27 @@ export const Header = ({ app, setSearch }) => {
                 lg:hidden
                 h-12
               `}
-              onClick={app.togglePrimaryMenu}
+              onClick={() => app.updateState('menu.main', app.state?.menu?.main ? false : true)}
             >
-              {app.primaryMenu ? <CloseIcon /> : <MenuIcon />}
+              <div className={`${app.state?.menu?.main ? 'rotate-90' : ''} transition-transform`}>
+                {app.state?.menu?.main ? <CloseIcon /> : <MenuIcon />}
+              </div>
             </button>
             <div className="hidden lg:block lg:pl-2">
               <Link href="/" className="text-neutral-content font-bold">
                 <button className={`h-12 group border-0 inline-flex items-center px-3 text-base
                     text-neural-content hover:bg-secondary hover:bg-opacity-50`}
                 >
-                  FIXME: We need a name
+                  Name?
                 </button>
               </Link>
             </div>
           </div>
-          <div className="flex flex-row items-center lg:hidden">
-            FIXME: We need a name
+          <div className="flex flex-row items-center lg:hidden pr-2">
+            <span className="pr-8">Name?</span>
+            <ThemePicker app={app} iconOnly bottom />
+            <LocalePicker app={app} iconOnly bottom />
+            
           </div>
           <div className="hidden lg:flex lg:flex-row gap-2 grow"></div>
           <div className="hidden lg:flex flex-row items-center">

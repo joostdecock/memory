@@ -22,6 +22,7 @@ export const AsideNavigation = ({ app, mobileOnly = false, before = [], after = 
   >
     <div className="w-screen lg:w-auto">
       {before}
+      <p className='px-4'>FIXME: Navigation here</p>
       <MainSections app={app} />
       <ActiveSection app={app} />
       {after}
