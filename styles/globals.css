@@ -87,49 +87,60 @@
   max-height: calc(100vh - 6rem);
 }
 
-/* Style for navigation */
-details {
-  user-select: none;
+/* mdx styles */
+.mdx a {
+  @apply text-secondary underline decoration-1;
 }
-details > summary > svg.details-toggle {
-  transform: rotate(90deg);
-  opacity: 0.4;
+.mdx a:hover {
+  @apply text-secondary-focus decoration-2 decoration-current;
 }
-details[open] > summary > svg.details-toggle {
-  transform: rotate(-90deg);
-  opacity: 0.8;
+.mdx ul {
+  @apply pl-4 list-disc list-inside text-base-content;
 }
-details[open] summary ~ * {
-  animation: ease-opacity-t-b 0.5s ease;
+.mdx ol {
+  @apply pl-4 list-decimal list-inside text-base-content;
 }
-summary {
-  cursor: pointer;
+.mdx code {
+  @apply bg-accent bg-opacity-10 px-2 rounded text-accent;
 }
-svg.details-toggle {
-  transition: all 0.2s ease-out;
+.mdx pre code {
+  @apply bg-inherit;
+}
+.mdx a.heading-autolink {
+  color: currentColor;
+  text-decoration: none;
+}
+.mdx a.heading-autolink:after {
+  content: '';
+  color: hsl(var(--s));
+  font-size: 75%;
+  padding-left: 0.5rem;
+}
+.mdx a.heading-autolink:hover:after {
+  content: '#';
+}
+/* Watch out of P tags in the toc list */
+.mdx-toc ul li p {
+  margin: 0;
+  padding: 0;
+  display: inline;
+}
+/* Keep p tags in lists inline */
+.mdx ul li p,
+.mdx ol li p {
+  margin: 0;
+  padding: 0;
+  display: inline;
+}
+.mdx table.mdx-table {
+  margin: 2rem auto;
+}
+.mdx table.mdx-table tr td {
+  padding: 0.25rem 0.5rem;
+}
+.mdx table.mdx-table thead th {
+  padding: 8px;
+  font-size: 110%;
+  border-bottom: 2px solid hsl(var(--b3));
 }
 
-/* TO JE TO - TO JE TAJ */
-summary::-webkit-details-marker {
-  display: none;
-}
-
-input[type='range']::-moz-range-track {
-  background: #3071a9;
-}
-
-input[type='range']::-ms-track {
-  background: transparent;
-}
-input[type='range']::-ms-fill-lower {
-  background: #2a6495;
-}
-input[type='range']:focus::-ms-fill-lower {
-  background: #3071a9;
-}
-input[type='range']::-ms-fill-upper {
-  background: #3071a9;
-}
-input[type='range']:focus::-ms-fill-upper {
-  background: #367ebd;
-}

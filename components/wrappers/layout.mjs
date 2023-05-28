@@ -1,5 +1,5 @@
 import Head from 'next/head'
-import { Header } from 'components/header.mjs'
+import { Header } from 'components/header/index.mjs'
 import { Footer } from 'components/footer/index.mjs'
 
 export const ns = ['locales']
